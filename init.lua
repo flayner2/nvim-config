@@ -223,6 +223,9 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- Copy and replace without replacing the current yanked word with the replaced one
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
+-- Toggle neotree
+vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>")
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
