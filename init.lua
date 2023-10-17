@@ -164,9 +164,8 @@ require('lazy').setup({
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
--- NOTE: You can change these options as you wish!
 
--- Set highlight on search
+-- Set incrmenetal highlight on search
 vim.o.hlsearch = false
 vim.o.incsearch = true
 
@@ -267,10 +266,10 @@ vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
-      'bash' },
+      'bash', 'svelte' },
 
-    -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-    auto_install = false,
+    -- Autoinstall languages that are not installed.
+    auto_install = true,
 
     highlight = { enable = true },
     indent = { enable = true },
@@ -408,10 +407,17 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  pyright = {},
+  ruff_lsp = {},
+  rust_analyzer = {},
+  tsserver = {},
+  jsonls = {},
+  eslint = {},
+  sqlls = {},
+  tailwindcss = {},
+  taplo = {},
+  yamlls = {},
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {
     Lua = {
