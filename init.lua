@@ -430,6 +430,7 @@ local servers = {
   tailwindcss = {},
   taplo = {},
   yamlls = {},
+  prismals = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {
