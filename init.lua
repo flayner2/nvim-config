@@ -204,7 +204,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- Keep a minimum of 12 lines visible when scrolling
-vim.o.scrolloff = 12
+vim.o.scrolloff = 8
 
 -- [[ Basic Keymaps ]]
 
