@@ -147,6 +147,8 @@ require('lazy').setup({
     },
   },
 
+  'prettier/vim-prettier',
+
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
