@@ -156,6 +156,15 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  -- Auto close html/jsx element tags
+  'windwp/nvim-ts-autotag',
+
+  -- Utilities to add, rename and remove tags in pairs
+  "tpope/vim-surround",
+
+  -- Well... emmet
+  "mattn/emmet-vim",
+
   require 'mdoliveira.plugins.autoformat',
   require 'mdoliveira.plugins.debug',
 
@@ -342,6 +351,10 @@ vim.defer_fn(function()
         },
       },
     },
+    -- Enable tsx/html tag completion
+    autotag = {
+      enable = true,
+    }
   }
 end, 0)
 
