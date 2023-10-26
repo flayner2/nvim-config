@@ -165,7 +165,7 @@ require('lazy').setup({
   -- Well... emmet
   "mattn/emmet-vim",
 
-  require 'mdoliveira.plugins.autoformat',
+  -- require 'mdoliveira.plugins.autoformat',
   require 'mdoliveira.plugins.debug',
 
   { import = 'custom.plugins' },
@@ -441,7 +441,6 @@ local servers = {
   rust_analyzer = {},
   tsserver = {},
   jsonls = {},
-  eslint = {},
   sqlls = {},
   tailwindcss = {},
   taplo = {},
