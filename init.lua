@@ -239,6 +239,7 @@ vim.keymap.set('x', '<leader>p', '"_dP')
 vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { silent = true })
 
 -- Buffer and BufferLine remaps
+vim.keymap.set('n', '<leader>bd', ':bd<CR>', { silent = true })
 vim.keymap.set('n', '[b', ':BufferLineCycleNext<CR>', { silent = true })
 vim.keymap.set('n', ']b', ':BufferLineCyclePrev<CR>', { silent = true })
 vim.keymap.set('n', '[B', ':BufferLineMoveNext<CR>', { silent = true })
