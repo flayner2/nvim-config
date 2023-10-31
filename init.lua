@@ -160,10 +160,10 @@ require('lazy').setup({
   'windwp/nvim-ts-autotag',
 
   -- Utilities to add, rename and remove tags in pairs
-  "tpope/vim-surround",
+  'tpope/vim-surround',
 
   -- Well... emmet
-  "mattn/emmet-vim",
+  'mattn/emmet-vim',
 
   -- require 'mdoliveira.plugins.autoformat',
   require 'mdoliveira.plugins.debug',
@@ -226,17 +226,23 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Move lines up and down in visual mode
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- Fix cursor position when using 'J' (append next line to end of current)
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set('n', 'J', 'mzJ`z')
 
 -- Copy and replace without replacing the current yanked word with the replaced one
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set('x', '<leader>p', '"_dP')
 
 -- Toggle neotree
-vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>")
+vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { silent = true })
+
+-- Buffer and BufferLine remaps
+vim.keymap.set('n', '[b', ':BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', ']b', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set('n', '[B', ':BufferLineMoveNext<CR>', { silent = true })
+vim.keymap.set('n', ']B', ':BufferLineMovePrev<CR>', { silent = true })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -354,7 +360,7 @@ vim.defer_fn(function()
     -- Enable tsx/html tag completion
     autotag = {
       enable = true,
-    }
+    },
   }
 end, 0)
 
@@ -531,17 +537,17 @@ cmp.setup {
 }
 
 -- Toggleterm
-require("toggleterm").setup {
+require('toggleterm').setup {
   size = function(term)
-    if term.direction == "horizontal" then
+    if term.direction == 'horizontal' then
       return 15
-    elseif term.direction == "vertical" then
+    elseif term.direction == 'vertical' then
       return vim.o.columns * 0.4
     end
   end,
   open_mapping = [[<c-\>]],
   -- Change the default shell. Can be a string or a function returning a string
-  shell = "zsh",
+  shell = 'zsh',
 }
 
 -- Moving in and out of the terminal while keeping it open
@@ -557,7 +563,7 @@ function _G.set_terminal_keymaps()
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
+vim.cmd 'autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
