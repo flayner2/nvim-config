@@ -32,7 +32,15 @@ return {
         null_ls.builtins.formatting.prettierd,
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.rustfmt,
-        null_ls.builtins.formatting.ruff,
+        null_ls.builtins.formatting.ruff.with {
+          extra_args = { '--ignore F841,F401' },
+        },
+        null_ls.builtins.formatting.sqlfluff.with {
+          extra_args = { '--dialect', 'mysql' },   -- change to your dialect
+          null_ls.builtins.diagnostics.sqlfluff.with {
+            extra_args = { '--dialect', 'mysql' }, -- change to your dialect
+          },
+        },
       },
     }
   end,
