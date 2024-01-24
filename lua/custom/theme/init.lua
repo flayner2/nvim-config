@@ -1,8 +1,8 @@
 return {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'catppuccin-macchiato'
-    end,
+  'sainnhe/gruvbox-material',
+  name = 'gruvbox-material',
+  priority = 1000,
+  config = function()
+    vim.cmd.colorscheme("gruvbox-material")
+  end,
 }
