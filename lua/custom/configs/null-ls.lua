@@ -4,7 +4,7 @@ local null_ls = require("null-ls")
 local opts = {
   sources = {
     -- diagnostics
-    null_ls.builtins.diagnostics.ruff,
+    -- null_ls.builtins.diagnostics.ruff,
 
     -- formatting
     null_ls.builtins.formatting.gofumpt,

@@ -48,4 +48,27 @@ M.mason = {
   }
 }
 
+-- M.cmp = {
+--   mapping = {
+--     ['<Tab>'] = require('cmp').mapping.confirm({ select = true }),
+--     ['<Up>'] = require('cmp').mapping.select_prev_item(),
+--     ['<Down>'] = require('cmp').mapping.select_next_item(),
+--   },
+-- }
+
+M.nvimtree = {
+  git = {
+    enable = true,
+  },
+
+  renderer = {
+    highlight_git = true,
+    icons = {
+      show = {
+        git = true,
+      },
+    },
+  },
+}
+
 return M
